@@ -5,6 +5,9 @@ Created on Sat Oct 12 10:24:57 2024
 @author: sherrins
 """
 
+import nest_asyncio
+nest_asyncio.apply()
+
 from shiny import App, ui, render
 
 # Define UI layout
@@ -24,5 +27,6 @@ def server(input, output, session):
 # Create app
 app = App(app_ui, server)
 
-# Serve the app
-app.run()
+# Run the app
+if __name__ == "__main__":
+    app.run()
